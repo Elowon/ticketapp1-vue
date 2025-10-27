@@ -1,11 +1,14 @@
 .auth-container {
   max-width: 400px;
+  width: 80%;
   margin: 160px auto 50px;
   padding: 60px;
   background-color: rgb(237, 236, 245);
   border-radius: 10px;
   box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+  box-sizing: border-box;
 }
+
 
 
 .auth-container h1 {
@@ -61,7 +64,7 @@ a {
 @media (max-width: 768px) {
   .auth-container {
     margin: 120px auto 40px;
-    padding: 40px 20px;
+    padding: 40px 21px;
   }
   .auth-container h1 {
     font-size: 1.8rem;
