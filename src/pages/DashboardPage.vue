@@ -1,5 +1,7 @@
 <template>
-  <main class="dashboard-container">
+  <main class="page-wrapper">
+    <NavigationBar />
+  <div class="dashboard-container">
     <header class="dashboard-header">
       <h1>Dashboard</h1>
       <button class="logout-btn" @click="logout">Logout</button>
@@ -27,10 +29,14 @@
     <section class="dashboard-actions">
       <button @click="$router.push('/tickets')">Go to Ticket Management</button>
     </section>
-  </main>
+  </div>
+  <FooterPage />
+</main>
 </template>
 
 <script setup>
+import FooterPage from '@/components/FooterPage.vue'
+import NavigationBar from '@/components/NavigationBar.vue'
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 import { useToast } from 'vue-toastification'

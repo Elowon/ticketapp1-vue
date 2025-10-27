@@ -1,24 +1,54 @@
-.dashboard-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #1e3a8a;
-  min-height: 100vh;
+/* ---- GLOBAL ---- */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #1e3a8a;
   color: white;
 }
 
+/* Wrapper for full-page flex layout */
+.page-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures full viewport height */
+  background-color: #1e3a8a;
+}
+
+/* Main dashboard container */
+.dashboard-container {
+   flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px auto 40px auto; /* top/bottom margin */
+  padding: 20px;
+  background-color: #1e3a8a;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.page-wrapper > .dashboard-container {
+  margin-top: 80px; /* adjust to match your navbar height */
+}
+
+/* ---- HEADER ---- */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px; /* closer spacing to content */
+  flex-wrap: wrap; /* allows wrapping on small screens */
 }
 
 .dashboard-header h1 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #fbbf24;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  margin: 0 0 10px 0; /* spacing for wrapped layout */
 }
 
 .logout-btn {
@@ -26,25 +56,27 @@
   background-color: #ef4444;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  transition: background 0.3s ease;
 }
 
 .logout-btn:hover {
   background-color: #dc2626;
 }
 
+/* ---- STATS CARDS ---- */
 .stats-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  margin-bottom: 40px;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .card {
   background-color: #ffffff;
-  padding: 24px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
@@ -53,7 +85,7 @@
 
 .card h2 {
   margin-bottom: 10px;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: bold;
   color: #111827;
 }
@@ -77,10 +109,11 @@
 /* ---- ACTIONS ---- */
 .dashboard-actions {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .dashboard-actions button {
-  padding: 14px 28px;
+  padding: 12px 24px;
   border: none;
   border-radius: 8px;
   background-color: #fbbf24;
@@ -95,14 +128,41 @@
   transform: scale(1.05);
 }
 
-@media (min-width: 768px) {
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    padding: 20px;
+    margin: 15px auto;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+
   .stats-cards {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .dashboard-actions button {
+    padding: 10px 20px;
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .dashboard-header h1 {
+    margin-bottom: 15px;
+  }
+    .page-wrapper > .dashboard-container {
+    margin-top: 60px; /* smaller navbar on mobile */
+  }
+
+
   .stats-cards {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr; /* one card per row on small screens */
   }
 }

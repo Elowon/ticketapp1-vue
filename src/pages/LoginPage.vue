@@ -1,5 +1,6 @@
 <template>
   <NavigationBar />
+
   <main class="auth-container">
     <h1>Login</h1>
     <form class="login-form" @submit.prevent="handleLogin" novalidate>
@@ -34,7 +35,9 @@
       Don't have an account?
       <a @click.prevent="$router.push('/auth/signup')" href="#">Sign up</a>
     </p>
+
   </main>
+  <FooterPage />
 </template>
 
 <script setup>
@@ -42,6 +45,7 @@ import { ref } from 'vue'
 import { useToast } from 'vue-toastification'
 import { useRouter } from 'vue-router'
 import NavigationBar from '@/components/NavigationBar.vue'
+import FooterPage from '@/components/FooterPage.vue'
 
 const email = ref('')
 const password = ref('')

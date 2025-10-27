@@ -24,6 +24,7 @@
         <path fill="#4f46e5" d="M0,0 C480,150 960,0 1440,150 L1440,0 L0,0 Z"></path>
       </svg>
     </section>
+    
     <section class="features-section">
     <h2>Why Choose TicketApp?</h2>
 

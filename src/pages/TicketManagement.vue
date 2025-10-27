@@ -47,12 +47,14 @@
     </section>
 
   </main>
+  <FooterPage />
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue'
 import { useToast } from 'vue-toastification'
 import NavigationBar from '@/components/NavigationBar.vue';
+import FooterPage from '@/components/FooterPage.vue';
 
 
 const toast = useToast()
