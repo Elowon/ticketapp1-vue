@@ -140,7 +140,7 @@ ticketapp-vue/
 │   │   └── TicketManagement.vue
 │   ├── assets/
 │   │   └── styles/
-│   │       ├── global.css
+│   │       ├── general.css
 │   │       ├── LandingPage.css
 │   │       ├── Dashboard.css
 │   │       ├── TicketManagement.css
@@ -163,4 +163,4 @@ npm install
 npm run serve
 
 
-App runs on → http://localhost:8080
+App runs on → http://localhost:5175
